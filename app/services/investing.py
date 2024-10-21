@@ -10,15 +10,13 @@ from app.models import CharityProject, Donation
 async def get_open_charity_projects(
     session: AsyncSession
 ) -> List[CharityProject]:
-    open_charity_projects = await charity_project_crud.get_opens(session)
-    return open_charity_projects
+    return await charity_project_crud.get_opens(session)
 
 
 async def get_open_donations(
     session: AsyncSession
 ) -> List[Donation]:
-    donations = await donation_crud.get_opens(session)
-    return donations
+    return await donation_crud.get_opens(session)
 
 
 async def make_a_payment(
